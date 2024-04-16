@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "558419672070",
+    "firebase_url": "https://eqw-violationeye-default-rtdb.firebaseio.com",
+    "project_id": "eqw-violationeye",
+    "storage_bucket": "eqw-violationeye.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558419672070:android:38694af8955a5b242ad787",
+        "android_client_info": {
+          "package_name": "com.example.maps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558419672070-d40doll67fhfce9rihqtv0lgglkkhutn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPOm_DdT-SXh5fyJsPnWIi6ZYYB4_wpic"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558419672070-d40doll67fhfce9rihqtv0lgglkkhutn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
