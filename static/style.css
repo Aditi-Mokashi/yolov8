@@ -1,0 +1,36 @@
+/* Add this new rule to style the "Browse" label */
+.browse-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.browse-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Modify the .input-field rule to hide the default "Choose File" button */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+/* Add this new rule to style the browse area */
+.browse-area {
+    position: relative;
+    display: inline-block;
+}
