@@ -5,6 +5,7 @@ from omegaconf import OmegaConf
 from pathlib import Path
 from db_utils import insert_to_realtime_db
 
+
 app = Flask(__name__)
 
 DEFAULT_CONFIG = Path("config.yaml")
@@ -27,7 +28,8 @@ def index():
 @app.route('/process_video', methods=['POST'])
 def process_video():
     video_file = request.files['video']
-    # video_data = video_file.read()  # Read video data
+    email = request.form['email']
+
     video_file.save('assets/uploaded_video.mp4')
     video_path = os.path.join(os.getcwd(), "assets", "uploaded_video.mp4")
     # Pass video data to the desired function for processing
@@ -38,7 +40,7 @@ def process_video():
     # Call the predict function with the modified configuration object
     predict(cfg)
 
-    insert_to_realtime_db()
+    insert_to_realtime_db(email=email)
 
     return 'Video processed successfully'
 
