@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "810455023367",
+    "firebase_url": "https://eqw-violationeye-42382-default-rtdb.firebaseio.com",
+    "project_id": "eqw-violationeye-42382",
+    "storage_bucket": "eqw-violationeye-42382.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810455023367:android:b23e0f5ed23381c9a18fa2",
+        "android_client_info": {
+          "package_name": "com.example.eqwviolationeye"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810455023367-8ntggr0qb1bs5d04l0u1apeu49hi910n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eqwviolationeye",
+            "certificate_hash": "3d167db41e0bfae824392f6112322dbe0a13bfc5"
+          }
+        },
+        {
+          "client_id": "810455023367-l7adt315dadm0panep0ngbk2d7b1nul4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eqwviolationeye",
+            "certificate_hash": "dc8e85b84e265b67ab286bce6da3384854525dbd"
+          }
+        },
+        {
+          "client_id": "810455023367-6ar5i00ce3m68qc3eg60vuivpr5dbm7o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6oy0uJaMa9nD2c7JoXgTduaSozs3CpCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810455023367-6ar5i00ce3m68qc3eg60vuivpr5dbm7o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
