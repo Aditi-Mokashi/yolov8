@@ -41,6 +41,7 @@ class DetectionPredictor(BasePredictor):
         img /= 255  # 0 - 255 to 0.0 - 1.0
         return img
 
+
     def postprocess(self, preds, img, orig_img):
         preds = ops.non_max_suppression(preds,
                                         self.args.conf,
@@ -53,6 +54,7 @@ class DetectionPredictor(BasePredictor):
             pred[:, :4] = ops.scale_boxes(img.shape[2:], pred[:, :4], shape).round()
 
         return preds
+
 
     def write_results(self, idx, preds, batch):
         ocr = ""

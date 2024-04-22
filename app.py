@@ -16,15 +16,6 @@ def index():
     return render_template('index.html')
 
 
-# @app.route('/')
-# def index():
-#     return '''
-#     <form method="POST" enctype="multipart/form-data" action="/process_video">
-#         <input type="file" name="video">
-#         <input type="submit" value="Upload">
-#     </form>
-#     '''
-
 @app.route('/process_video', methods=['POST'])
 def process_video():
     video_file = request.files['video']
