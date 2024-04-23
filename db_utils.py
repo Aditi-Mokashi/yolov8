@@ -1,5 +1,5 @@
 import firebase_admin
-from firebase_admin import credentials, firestore, db
+from firebase_admin import credentials, firestore, db, storage
 import re
 
 def insert_to_realtime_db(email: str):
@@ -27,23 +27,28 @@ def insert_to_realtime_db(email: str):
         number_plate_ref.set(data)
         timestamps = ref.get()
 
-        # save video to firestore
-        firestore_db = firestore.client()
-
         # Save video to Firestore
         with open('assets/uploaded_video.mp4', 'rb') as video_file:
             video_data = video_file.read()
-
+        
+        # save video to firestore
+        firestore_db = firestore.client()
         video_ref = firestore_db.collection(u'videos').document()
+        
         file_name = f'{user_name}_{video_ref.id}.mp4'
-        video_ref.set({
-            u'video_data': firebase_admin.firestore.Blob(video_data),
-            u'video_name': file_name
-        })
+        local_file = 'assets/uploaded_video.mp4'
+        bucket = storage.bucket()
+        blob = bucket.blob(file_name)
+        blob.upload_from_filename(local_file)
+        blob.make_public()
+
+        # video_ref.set({
+        #     u'video_data': firebase_admin.firestore.Blob(video_data),
+        #     u'video_name': file_name
+        # })
 
         # Get the download URL of the video file from Firestore
-        video_url = video_ref.get().get('video_name')
-
+        # video_url = video_ref.get().get('video_name')
 
         # Iterate over each key in the timestamps dictionary and check if it has a child 'number_plates'
         for timestamp in timestamps:
@@ -52,11 +57,7 @@ def insert_to_realtime_db(email: str):
                 number_plate_ref = timestamp_ref.child('number_plates')
                 data = ','.join(str(n) for n in set(number_plate))
                 number_plate_ref.set(data)
-                video_ref_realtime = timestamp_ref.push()
-                video_ref_realtime.set({
-                    'video_url': video_url,
-                    'video_name': file_name
-                })
+                timestamp_ref.child("uploaded_video").set(blob.public_url)
                 break
 
         return "Data stored successfully", 200
